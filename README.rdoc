@@ -11,11 +11,11 @@ Prefix command provides you with a simple command-line tool to do exactly that.
 
 INSTALLATION
 
-[sudo] gem install prefix-cmd
+ [sudo] gem install prefix-cmd
 
 Or grab the source and:
 
-rake install
+ rake install
  
 USAGE
 
