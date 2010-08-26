@@ -1,0 +1,32 @@
+A simple command-line tool for working with the data collected by 
+Richard Cyganiak's excellent service http://prefix.cc.
+
+I rely on the service as the easiest way to remember URIs for RDF vocabularies. 
+But I often find myself working on a train or a plane and so the service is 
+accessible.
+
+What I really wanted is a way to query the knowledge base both on and offline.
+
+Prefix command provides you with a simple command-line tool to do exactly that.
+
+The command caches a local copy of the data available from:
+
+http://prefix.cc/popular/all
+
+The data is fetched and cached in:
+
+~/.prefix-cmd/prefixes.json
+
+There are three options:
+
+ prefix-cmd init #initialise or refresh your local cache
+ 
+To lookup a URI:
+
+ prefix-cmd uri [prefix]
+ 
+To suggest a prefix:
+
+ prefix-cmd prefix [uri]
+ 
+Thats all!  

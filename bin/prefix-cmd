@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+require 'prefix'
+
+PROGRAM     = File::basename $0
+
+USAGE = <<-EOL 
+SYNOPSIS
+
+  #{ PROGRAM } mode [args]*
+
+DESCRIPTION
+	
+MODE
+
+	init
+	   Initializes your local cache of data, or refreshes a previously cached copy
+	   The data is stored in ~/.prefix-cmd/prefixes.json
+	   
+	uri [prefix]
+	   Lookup the uri for a given prefix
+	   
+	prefix [uri]
+	   Lookup the prefix for a given vocabulary URI
+
+EOL
+
+mode = ARGV.shift
+
+  case mode
+  when "init"  	
+    Prefix.init
+  when "uri"
+    Prefix.uri ARGV.shift
+  when "prefix"
+    Prefix.prefix ARGV.shift    
+  when "help"
+  	USAGE.display
+  else
+    puts "Unknown command"
+  	USAGE.display
+  end
