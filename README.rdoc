@@ -9,6 +9,16 @@ What I really wanted is a way to query the knowledge base both on and offline.
 
 Prefix command provides you with a simple command-line tool to do exactly that.
 
+INSTALLATION
+
+[sudo] gem install prefix-cmd
+
+Or grab the source and:
+
+rake install
+ 
+USAGE
+
 The command caches a local copy of the data available from:
 
 http://prefix.cc/popular/all
@@ -29,4 +39,4 @@ To suggest a prefix:
 
  prefix-cmd prefix [uri]
  
-Thats all!  
+Thats all!
