@@ -9,7 +9,7 @@ require "redis"
 require "digest/md5"
 
 NAME = "prefix-cmd"
-VER = "0.1"
+VER = "0.2"
 
 PKG_FILES = %w( README.rdoc Rakefile ) + 
   Dir.glob("{bin,lib}/**/*")
