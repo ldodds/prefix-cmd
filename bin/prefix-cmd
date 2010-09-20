@@ -17,8 +17,8 @@ MODE
 	   Initializes your local cache of data, or refreshes a previously cached copy
 	   The data is stored in ~/.prefix-cmd/prefixes.json
 	   
-	uri [prefix]
-	   Lookup the uri for a given prefix
+	uri [prefix|curie]
+	   Lookup the uri for a given prefix, or expand curie to uri
 	   
 	prefix [uri]
 	   Lookup the prefix for a given vocabulary URI

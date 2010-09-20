@@ -27,10 +27,19 @@ class Prefix
     
   end
   
-  def Prefix.uri(prefix)
+  def Prefix.uri(prefix_or_curie)
     init() unless test ?e, CONFIG_FILE
     json = JSON.load( File.open(CONFIG_FILE, "r") )
-    puts json[prefix] || "Unknown prefix #{prefix}"
+    if Prefix.curie? prefix_or_curie
+      match = prefix_or_curie.match /([^:]*):(.*)/
+      if json[match[1]]
+        puts json[match[1]] + match[2]
+      else
+        puts "Unknown prefix #{match[1]}"
+      end
+    else
+      puts json[prefix_or_curie] || "Unknown prefix #{prefix_or_curie}"
+    end
   end
   
   def Prefix.prefix(uri)
@@ -41,4 +50,7 @@ class Prefix
     end
   end
   
+  def Prefix.curie?(prefix_or_curie)
+    prefix_or_curie.include? ':'
+  end
 end
